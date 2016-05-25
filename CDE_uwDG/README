@@ -1,0 +1,16 @@
+web:
+https://www.comsol.com/community/exchange/383/
+
+the details:
+Convection dominated Convection-Diffusion Equation by upwind discontinuous Galerkin (dG) method
+Huashan Sheng (盛华山), Department of Mathematics, Shanghai JiaoTong University (上海交通大学数学系)
+Email: shs3701001@sjtu.edu.cn
+
+We consider the Convection-Diffusion Equation with very small diffusion coefficient $\mu$:
+\[
+-mu\Delta u + \mathbf{\beta}\dot\nabla u =f \mathrm{in}~ \Omega
+u=g(x,y) \mathrm{on}~ partial\Omega
+\]
+First we use the Convection-Diffusion Equation function of The Classical PDE Interfaces in COMSOL 4.4.
+Then, we use the WeakForm PDE function and choose shape function type to be discontinuous Largrange.
+We compare these two solutions. 
