@@ -1,0 +1,16 @@
+u1jump up(u1)-down(u1)
+v1jump up(v1)-down(v1)
+p1jump up(p1)-down(p1)
+testu1jump test(up(u1))-test(down(u1))
+testv1jump test(up(v1))-test(down(v1))
+testp1jump test(up(p1))-test(down(p1))
+u1navg 0.5*((up(u1x)+down(u1x))*unx+(up(u1y)+down(u1y))*uny) Expression:1/2*{{(u1x,u1y) \cdot (unx,uny)}}. Attention: the normal (unx,uny) is just using in the inter edges, (nx, ny) using in bou1ndry edges.
+v1navg 0.5*((up(v1x)+down(v1x))*unx+(up(v1y)+down(v1y))*uny)
+testu1navg 0.5*((test(up(u1x))+test(down(u1x)))*unx+(test(up(u1y))+test(down(u1y)))*uny)
+testv1navg 0.5*((test(up(v1x))+test(down(v1x)))*unx+(test(up(v1y))+test(down(v1y)))*uny)
+p1avg 0.5*(up(p1)+down(p1))
+testp1avg 0.5*(test(up(p1))+test(down(p1)))
+u1n u1x*nx+u1y*ny u1n is used in bou1ndary edges.
+v1n v1x*nx+v1y*ny
+testu1n test(u1x)*nx+test(u1y)*ny testu1n is used in bou1ndary edges.
+testv1n test(v1x)*nx+test(v1y)*ny
