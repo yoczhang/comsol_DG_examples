@@ -1,0 +1,54 @@
+ns_step1_u1:
+弱解型偏微分方程 1
+nu*(u1x*test(u1x)+u1y*test(u1y))-p1*test(u1x)-f1*test(u1)  <----stokes
+nu*(u1x*test(u1x)+u1y*test(u1y))+(u*u1x+v*u1y)*test(u1)+0.5*(ux+vy)*u1*test(u1)-p1*test(u1x)-f1*test(u1)  <----ns
+
+网格边界弱贡献 1(interior edges)
+nu*(sigma/h^beta)*u1jump*testu1jump-nu*u1navg*testu1jump+nu*eipsilon*testu1navg*u1jump+p1avg*testu1jump*unx  <----stokes
+(为了看的方便，下面再定义一个  网格边界弱贡献 2  <----ns)
+
+网格边界弱贡献 2(interior edges)
+(ux*dnx+uy*dny<0)*(ux*dnx+uy*dny)*test(down(u1))*(down(u1)-up(u1))+(ux*unx+uy*uny<0)*(ux*unx+uy*uny)*test(up(u1))*(up(u1)-down(u1))-0.5*(ujump*unx+vjump*uny)*(0.5*(up(u1*test(u1))+down(u1*test(u1))))
+
+(网格边界弱贡献 1 + 网格边界弱贡献 2)  <----ns interior edges
+
+
+弱贡献 1(boundary edges)
+nu*sigma/h^beta*u*test(u)-nu*un*test(u)+nu*eipsilon*testun*u+p*test(u)*nx-nu*eipsilon*testun*g1-nu*sigma/h^beta*test(u)*g1  <----stokes
+
+弱贡献 2
+(ux*dnx+uy*dny<0)*(ux*dnx+uy*dny)*test(down(u1))*(down(u1)-g1)+(ux*unx+uy*uny<0)*(ux*unx+uy*uny)*test(up(u1))*(up(u1)-g1)-0.5*(u*nx+v*ny)*(u1*test(u1))
+
+(弱贡献 1 + 弱贡献 2)  <----ns boundary edges
+
+
+
+
+ns_step1_v1:
+弱解型偏微分方程 1
+nu*(v1x*test(v1x)+v1y*test(v1y))-p1*test(v1y)-f2*test(v1)  <----stokes
+nu*(v1x*test(v1x)+v1y*test(v1y))+(u*v1x+v*v1y)*test(v1)+0.5*(ux+vy)*v1*test(v1)-p1*test(v1y)-f2*test(v1)  <----ns
+
+网格边界弱贡献 1(interior edges)
+nu*(sigma/h^beta)*v1jump*testv1jump-nu*v1navg*testv1jump+nu*eipsilon*testv1navg*v1jump+p1avg*testv1jump*uny <----stokes
+
+网格边界弱贡献 2(interior edges)
+(ux*dnx+uy*dny<0)*(ux*dnx+uy*dny)*test(down(v1))*(down(v1)-up(v1))+(ux*unx+uy*uny<0)*(ux*unx+uy*uny)*test(up(v1))*(up(v1)-down(v1))-0.5*(ujump*unx+vjump*uny)*(0.5*(up(v1*test(v1))+down(v1*test(v1))))
+
+(网格边界弱贡献 1 + 网格边界弱贡献 2)  <----ns interior edges
+
+
+弱贡献 1(boundary edges)
+nu*sigma/h^beta*v1*test(v1)-nu*v1n*test(v1)+nu*eipsilon*testv1n*v1+p1*test(v1)*ny-nu*eipsilon*testv1n*g1-nu*sigma/h^beta*test(v1)*g2
+弱贡献 2
+(ux*dnx+uy*dny<0)*(ux*dnx+uy*dny)*test(down(v1))*(down(v1)-g2)+(ux*unx+uy*uny<0)*(ux*unx+uy*uny)*test(up(v1))*(up(v1)-g2)-0.5*(u*nx+v*ny)*(v1*test(v1))
+
+
+
+
+
+
+
+
+
+

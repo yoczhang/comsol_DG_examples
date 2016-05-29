@@ -1,0 +1,10 @@
+nu*(ux*test(ux)+uy*test(uy))-p*test(ux)-f1*test(u)
+nu*(sigma/h^beta)*ujump*testujump-nu*unavg*testujump+nu*eipsilon*testunavg*ujump+pavg*testujump*unx
+
+
+nu*(vx*test(vx)+vy*test(vy))-p*test(vy)-f2*test(v)
+nu*(sigma/h^beta)*vjump*testvjump-nu*vnavg*testvjump+nu*eipsilon*testvnavg*vjump+pavg*testvjump*uny
+
+
+-test(p)*(ux+vy)+test(p)*p*1e-6
+testpavg*(ujump*nx+vjump*ny)

@@ -1,0 +1,16 @@
+nu*(u1x*test(u1x)+u1y*test(u1y))-p1*test(u1x)-f1*test(u1)
+nu*(u1x*test(u1x)+u1y*test(u1y))-p1*test(u1x)-f1*test(u1)
+nu*(sigma/h^beta)*u1jump*testu1jump-nu*u1navg*testu1jump+nu*eipsilon*testu1navg*u1jump+p1avg*testu1jump*unx
+nu*(sigma/h^beta)*u1jump*testu1jump-nu*u1navg*testu1jump+nu*eipsilon*testu1navg*u1jump+p1avg*testu1jump*unx
+
+
+nu*(v1x*test(v1x)+v1y*test(v1y))-p1*test(v1y)-f2*test(v1)
+nu*(v1x*test(v1x)+v1y*test(v1y))-p1*test(v1y)-f2*test(v1)
+nu*(sigma/h^beta)*v1jump*testv1jump-nu*v1navg*testv1jump+nu*eipsilon*testv1navg*v1jump+p1avg*testv1jump*uny
+nu*(sigma/h^beta)*v1jump*testv1jump-nu*v1navg*testv1jump+nu*eipsilon*testv1navg*v1jump+p1avg*testv1jump*uny
+
+
+-test(p1)*(u1x+v1y)+test(p1)*p1*1e-6
+-test(p1)*(u1x+v1y)+test(p1)*p1*1e-6
+testp1avg*(u1jump*nx+v1jump*ny)
+testp1avg*(u1jump*nx+v1jump*ny)
