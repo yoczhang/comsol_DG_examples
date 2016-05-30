@@ -1,3 +1,6 @@
+uexac x^2*(x-1)^2*y*(y-1)*(2*y-1) stokes exact solution
+vexac -x*(x-1)*(2*x-1)*y^2*(y-1)^2 stokes exact solution
+pexac (2*x-1)*(2*y-1) stokes exact solution
 ujump up(u)-down(u)
 vjump up(v)-down(v)
 pjump up(p)-down(p)
@@ -14,3 +17,10 @@ un ux*nx+uy*ny un is used in boundary edges.
 vn vx*nx+vy*ny
 testun test(ux)*nx+test(uy)*ny testun is used in boundary edges.
 testvn test(vx)*nx+test(vy)*ny
+uerr u-uexac
+verr v-vexac
+perr p-pexac
+u_l2err sqrt(a_int(uerr^2))
+v_l2err sqrt(a_int(verr^2))
+p_l2err sqrt(a_int(perr^2))
+uv_l2err sqrt(u_l2err^2+v_l2err^2)

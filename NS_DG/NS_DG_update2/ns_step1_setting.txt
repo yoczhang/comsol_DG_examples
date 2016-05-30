@@ -14,3 +14,10 @@ u1n u1x*nx+u1y*ny u1n is used in bou1ndary edges.
 v1n v1x*nx+v1y*ny
 testu1n test(u1x)*nx+test(u1y)*ny testu1n is used in bou1ndary edges.
 testv1n test(v1x)*nx+test(v1y)*ny
+u1err u1-ns_uexac
+v1err v1-ns_vexac
+p1err p1-ns_pexac
+u1_l2err sqrt(a_int(u1err^2))
+v1_l2err sqrt(a_int(v1err^2))
+p1_l2err sqrt(a_int(p1err^2))
+u1v1_l2err sqrt(u1_l2err^2+v1_l2err^2)
