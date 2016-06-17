@@ -1,0 +1,12 @@
+b1_1_jump up(b1_1)-down(b1_1)
+b2_1_jump up(b2_1)-down(b2_1)
+testb1_1_jump up(test(b1_1))-down(test(b1_1))
+testb2_1_jump up(test(b2_1))-down(test(b2_1))
+testb1_1avg 0.5*(up(b1_1)+down(b1_1))
+testb2_1avg 0.5*(up(b2_1)+down(b2_1))
+b1_1yavg 0.5*(up(b1_1y)+down(b1_1y))
+b2_1xavg 0.5*(up(b2_1x)+down(b2_1x))
+testb1_1yavg 0.5*(up(test(b1_1y))+down(test(b1_1y)))
+testb2_1xavg 0.5*(up(test(b2_1x))+down(test(b2_1x)))
+r_1jump up(r_1)-down(r_1)
+

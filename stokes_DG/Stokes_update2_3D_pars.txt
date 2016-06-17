@@ -1,0 +1,23 @@
+ujump up(u)-down(u)
+vjump up(v)-down(v)
+wjump up(w)-down(w)
+pjump up(p)-down(p)
+testujump test(up(u))-test(down(u))
+testvjump test(up(v))-test(down(v))
+testwjump test(up(w))-test(down(w))
+testpjump test(up(p))-test(down(p))
+unavg 0.5*((up(ux)+down(ux))*unx+(up(uy)+down(uy))*uny+(up(uz)+down(uz))*unz)
+vnavg 0.5*((up(vx)+down(vx))*unx+(up(vy)+down(vy))*uny+(up(vz)+down(vz))*unz)
+wnavg 0.5*((up(wx)+down(wx))*unx+(up(wy)+down(wy))*uny+(up(wz)+down(wz))*unz)
+testunavg 0.5*((test(up(ux))+test(down(ux)))*unx+(test(up(uy))+test(down(uy)))*uny+(test(up(uz))+test(down(uz)))*unz)
+testvnavg 0.5*((test(up(vx))+test(down(vx)))*unx+(test(up(vy))+test(down(vy)))*uny+(test(up(vz))+test(down(vz)))*unz)
+testwnavg 0.5*((test(up(wx))+test(down(wx)))*unx+(test(up(wy))+test(down(wy)))*uny+(test(up(wz))+test(down(wz)))*unz)
+pavg 0.5*(up(p)+down(p))
+testpavg 0.5*(test(up(p))+test(down(p)))
+testun test(ux)*nx+test(uy)*ny+test(uz)*nz
+testvn test(vx)*nx+test(vy)*ny+test(vz)*nz
+testwn test(wx)*nx+test(wy)*ny+test(wz)*nz
+un ux*nx+uy*ny+uz*nz
+vn vx*nx+vy*ny+vz*nz
+wn wx*nx+wy*ny+wz*nz
+

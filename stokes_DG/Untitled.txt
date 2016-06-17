@@ -1,0 +1,4 @@
+nu 1 dynamical viscosity
+sigma 10
+eipsilon -1
+beta 1

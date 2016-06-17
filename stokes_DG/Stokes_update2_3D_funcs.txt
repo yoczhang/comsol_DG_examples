@@ -1,0 +1,39 @@
+弱解型偏微分方程_u:
+弱解型偏微分方程 1
+nu*(ux*test(ux)+uy*test(uy)+uz*test(uz))-p*test(ux)-f1*test(u)
+网格边界弱贡献 1
+nu*(sigma/h^beta)*ujump*testujump-nu*unavg*testujump+nu*eipsilon*testunavg*ujump+pavg*testujump*unx
+
+弱贡献 1
+nu*sigma/h^beta*u*test(u)-nu*un*test(u)+nu*eipsilon*testun*u+p*test(u)*nx-nu*eipsilon*testun*g1-nu*sigma/h^beta*test(u)*g1
+
+
+弱解型偏微分方程_v
+弱解型偏微分方程 1
+nu*(vx*test(vx)+vy*test(vy)+vz*test(vz))-p*test(vy)-f2*test(v)
+网格边界弱贡献 1
+nu*(sigma/h^beta)*vjump*testvjump-nu*vnavg*testvjump+nu*eipsilon*testvnavg*vjump+pavg*testvjump*uny
+
+弱贡献 1
+nu*sigma/h^beta*v*test(v)-nu*vn*test(v)+nu*eipsilon*testvn*v+p*test(v)*ny-nu*eipsilon*testvn*g2-nu*sigma/h^beta*test(v)*g2
+
+
+弱解型偏微分方程_w
+弱解型偏微分方程 1
+nu*(wx*test(wx)+wy*test(wy)+wz*test(wz))-p*test(wz)-f3*test(w)
+网格边界弱贡献 1
+nu*(sigma/h^beta)*wjump*testwjump-nu*wnavg*testwjump+nu*eipsilon*testwnavg*wjump+pavg*testwjump*unz
+
+弱贡献 1
+nu*sigma/h^beta*w*test(w)-nu*wn*test(w)+nu*eipsilon*testwn*w+p*test(w)*nz-nu*eipsilon*testwn*g3-nu*sigma/h^beta*test(w)*g3
+
+
+弱解型偏微分方程_p
+弱解型偏微分方程 1
+-test(p)*(ux+vy+wz)+test(p)*p*1e-6
+
+网格边界弱贡献 1
+testpavg*(ujump*unx+vjump*uny+wjump*unz)
+
+弱贡献 1
+test(p)*(u*nx+v*ny+w*nz)-test(p)*(g1*nx+g2*ny+g3*nz)

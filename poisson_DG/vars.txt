@@ -1,0 +1,12 @@
+f 12*pi*pi*cos(2*pi*x)*cos(2*pi*y)*cos(2*pi*z)
+g 0
+uexac cos(2*pi*x)*cos(2*pi*y)*cos(2*pi*z)
+error abs(u-uexac)
+l2err error^2
+ujump up(u)-down(u)
+testujump test(up(u))-test(down(u))
+unavg 0.5*((up(ux)+down(ux))*unx+(up(uy)+down(uy))*uny)
+testunavg 0.5*((test(up(ux))+test(down(ux)))*unx+(test(up(uy))+test(down(uy)))*uny)
+sigma 10
+l2 intop1(l2err)
+L2 sqrt(l2)

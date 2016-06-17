@@ -1,0 +1,17 @@
+f1 2*c_par*(2*y-1)*(2*z-1)-2*c_par*nu*((y-y^2)*(2*z-1)-(z-z^2)*(2*y-1))+c_par*nu*(x-x^2)*(4*y-2)-c_par*nu*(x-x^2)*(4*z-2)
+f2 2*c_par*(2*x-1)*(2*z-1)+2*c_par*nu*((x-x^2)*(2*z-1)-(z-z^2)*(2*x-1))-c_par*nu*(y-y^2)*(4*x-2)+c_par*nu*(y-y^2)*(4*z-2)
+f3 2*c_par*(2*x-1)*(2*y-1)-2*c_par*nu*((x-x^2)*(2*y-1)-(y-y^2)*(2*x-1))+c_par*nu*(z-z^2)*(4*x-2)-c_par*nu*(z-z^2)*(4*y-2)
+g1 0
+g2 0
+g3 0
+uexac c_par*(x^2-x)*((2*y-1)*(z^2-z)-(y^2-y)*(2*z-1))
+vexac c_par*(y^2-y)*(-(2*x-1)*(z^2-z)+(x^2-x)*(2*z-1))
+wexac c_par*(z^2-z)*((2*x-1)*(y^2-y)-(x^2-x)*(2*y-1))
+pexac c_par*(2*x-1)*(2*y-1)*(2*z-1)
+uerr u-uexac
+verr v-vexac
+werr w-wexac
+u_l2err sqrt(intop1(uerr^2))
+v_l2err sqrt(intop1(verr^2))
+w_l2err sqrt(intop1(werr^2))
+uvw_l2err sqrt(u_l2err^2+v_l2err^2+w_l2err^2)
