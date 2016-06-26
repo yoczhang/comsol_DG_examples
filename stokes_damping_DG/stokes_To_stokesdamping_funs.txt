@@ -1,0 +1,64 @@
+=====================================================================================================
+stokes_damping_step0_u
+弱解型偏微分方程 1
+nu*(ux*test(ux)+uy*test(uy))+u*test(u)-p*test(ux)-f1*test(u)
+网格边界弱贡献 1
+nu*(sigma/h^beta)*ujump*testujump-nu*unavg*testujump+nu*eipsilon*testunavg*ujump+pavg*testujump*unx
+
+弱贡献 1
+nu*sigma/h^beta*u*test(u)-nu*un*test(u)+nu*eipsilon*testun*u+p*test(u)*nx-nu*eipsilon*testun*g1-nu*sigma/h^beta*test(u)*g1
+
+
+stokes_damping_step0_v
+弱解型偏微分方程 1
+nu*(vx*test(vx)+vy*test(vy))+v*test(v)-p*test(vy)-f2*test(v)
+网格边界弱贡献 1
+nu*(sigma/h^beta)*vjump*testvjump-nu*vnavg*testvjump+nu*eipsilon*testvnavg*vjump+pavg*testvjump*uny
+
+弱贡献 1
+nu*sigma/h^beta*v*test(v)-nu*vn*test(v)+nu*eipsilon*testvn*v+p*test(v)*ny-nu*eipsilon*testvn*g2-nu*sigma/h^beta*test(v)*g2
+
+
+stokes_damping_step0_p
+弱解型偏微分方程 1
+-test(p)*(ux+vy)+test(p)*p*1e-6
+网格边界弱贡献 1
+testpavg*(ujump*unx+vjump*uny)
+
+弱贡献 1
+test(p)*(u*nx+v*ny)-test(p)*(g1*nx+g2*ny)
+
+
+
+
+
+=====================================================================================================
+stokes_damping_step1_u1
+弱解型偏微分方程 1
+nu*(u1x*test(u1x)+u1y*test(u1y))+alpha_*(sqrt(u^2+v^2))^beta_*u1*test(u1)-p1*test(u1x)-f1*test(u1)
+网格边界弱贡献 1
+nu*(sigma/h^beta)*u1jump*testu1jump-nu*u1navg*testu1jump+nu*eipsilon*testu1navg*u1jump+p1avg*testu1jump*unx
+
+弱贡献 1
+nu*sigma/h^beta*u1*test(u1)-nu*u1n*test(u1)+nu*eipsilon*testu1n*u1+p1*test(u1)*nx-nu*eipsilon*testu1n*g1-nu*sigma/h^beta*test(u1)*g1
+
+
+stokes_damping_step1_v1
+弱解型偏微分方程 1
+nu*(v1x*test(v1x)+v1y*test(v1y))+alpha_*(sqrt(u^2+v^2))^beta_*v1*test(v1)-p1*test(v1y)-f2*test(v1)
+网格边界弱贡献 1
+nu*(sigma/h^beta)*v1jump*testv1jump-nu*v1navg*testv1jump+nu*eipsilon*testv1navg*v1jump+p1avg*testv1jump*uny
+
+弱贡献 1
+nu*sigma/h^beta*v1*test(v1)-nu*v1n*test(v1)+nu*eipsilon*testv1n*v1+p1*test(v1)*ny-nu*eipsilon*testv1n*g2-nu*sigma/h^beta*test(v1)*g2
+
+
+stokes_damping_step1_p1
+弱解型偏微分方程 1
+-test(p1)*(u1x+v1y)+test(p1)*p1*1e-6
+网格边界弱贡献 1
+testp1avg*(u1jump*unx+v1jump*uny)
+
+弱贡献 1
+test(p1)*(u1*nx+v1*ny)-test(p1)*(g1*nx+g2*ny)
+
